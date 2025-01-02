@@ -2,37 +2,28 @@ import React, { Children } from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
 import { MenuItemType } from 'antd/es/menu/interface';
+import { Link, Outlet } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const items :MenuItemType[] = [
     {
         key:'jahid1',
-        label:'Dashboard',
+        label: <Link to={'/'}>Dashboard</Link>,
     },
     {
         key:'jahid2',
-        label:'Profile',
+        label: <Link to={'/admin/create-student'}>create-student</Link> ,
+    },
+    {
+        key:'create-faculty',
+        label: <Link to={'/admin/create-faculty'}>create-faculty</Link> ,
     },
     {
         key:'jahid3',
-        label:'User Mangement',
+        label: <Link to={'/admin/dashboard'}>User Mangement</Link>,
     },
 ]
-// const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-//   (icon, index) => ({
-//     key: String(index + 1),
-//     icon: React.createElement(icon),
-//     label: `nav ${index + 1}`,
-//     Children:[
-//         {
-//             key:'kdjfa',
-//             label: 'jahid'
-
-//         }
-//     ]
-//   }),
-// );
 
 const MainLayout: React.FC = () => {
 
@@ -63,7 +54,7 @@ const MainLayout: React.FC = () => {
           
           }}
         >
-         the versity content Here
+         <Outlet/>
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>
