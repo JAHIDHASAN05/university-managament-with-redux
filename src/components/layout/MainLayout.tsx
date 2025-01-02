@@ -3,27 +3,11 @@ import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/i
 import { Layout, Menu, theme } from 'antd';
 import { MenuItemType } from 'antd/es/menu/interface';
 import { Link, Outlet } from 'react-router-dom';
+import { adminSidebarItems } from '../../routes/admin.routes';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items :MenuItemType[] = [
-    {
-        key:'jahid1',
-        label: <Link to={'/'}>Dashboard</Link>,
-    },
-    {
-        key:'jahid2',
-        label: <Link to={'/admin/create-student'}>create-student</Link> ,
-    },
-    {
-        key:'create-faculty',
-        label: <Link to={'/admin/create-faculty'}>create-faculty</Link> ,
-    },
-    {
-        key:'jahid3',
-        label: <Link to={'/admin/dashboard'}>User Mangement</Link>,
-    },
-]
+console.log(adminSidebarItems);
 
 const MainLayout: React.FC = () => {
 
@@ -42,7 +26,7 @@ const MainLayout: React.FC = () => {
       <div style={{display:'flex', color:'white', alignItems:"center", justifyContent:'center', paddingTop:'1rem' , paddingBottom:'1rem'}} >
         <h1>Antd Dashboard</h1>
       </div>
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={adminSidebarItems} />
     </Sider>
     <Layout>
       <Header style={{ padding: 0 }} />
